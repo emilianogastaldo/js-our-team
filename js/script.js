@@ -1,3 +1,5 @@
+// Create array of objects (Milestone 0)
+
 const teamDatas = [
     { name: 'Wayne Barnett', role: 'Founder & CEO', pic: 'wayne-barnett-founder-ceo.jpg' },
     { name: 'Angela Caroll', role: 'Chief Editor', pic: 'angela-caroll-chief-editor.jpg' },
@@ -7,4 +9,10 @@ const teamDatas = [
     { name: 'Barbara Ramos', role: 'Graphic Designer', pic: 'barbara-ramos-graphic-designer.jpg' },
 ];
 
-console.log(teamDatas);
+// Print the datas in console (Milestone 1)
+for (let team of teamDatas) {
+    console.log(team.name)
+    for (let key in team) {
+        console.log(`${key}: ${team[key]} `);
+    }
+}
