@@ -21,17 +21,22 @@ const teamDatas = [
 //     }
 // }
 
-let teamRow = '<div>';
+let teamRow = '';
 
 for (let team of teamDatas) {
     teamRow += '<p>'
     for (let key in team) {
         console.log(`${key}: ${team[key]} `);
+        if (key === 'pic') {
+            teamRow += `<div class="card-img">
+            <img src="img/${team.pic}" alt="">
+            </div>`
+        }
         teamRow += `${key}: ${team[key]} `
     }
     teamRow += '</p>'
 }
 
-teamRow += '</div>';
+teamRow += '';
 
 rowElement.innerHTML = teamRow;
