@@ -1,5 +1,9 @@
-// Create array of objects (Milestone 0)
+// Import the html's element
 
+const rowElement = document.querySelector('.row');
+
+
+// Create array of objects (Milestone 0)
 const teamDatas = [
     { name: 'Wayne Barnett', role: 'Founder & CEO', pic: 'wayne-barnett-founder-ceo.jpg' },
     { name: 'Angela Caroll', role: 'Chief Editor', pic: 'angela-caroll-chief-editor.jpg' },
@@ -10,9 +14,24 @@ const teamDatas = [
 ];
 
 // Print the datas in console (Milestone 1)
+// for (let team of teamDatas) {
+//     console.log(team.name)
+//     for (let key in team) {
+//         console.log(`${key}: ${team[key]} `);
+//     }
+// }
+
+let teamRow = '<div>';
+
 for (let team of teamDatas) {
-    console.log(team.name)
+    teamRow += '<p>'
     for (let key in team) {
         console.log(`${key}: ${team[key]} `);
+        teamRow += `${key}: ${team[key]} `
     }
+    teamRow += '</p>'
 }
+
+teamRow += '</div>';
+
+rowElement.innerHTML = teamRow;
