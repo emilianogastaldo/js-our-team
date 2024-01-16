@@ -4,7 +4,7 @@ const rowElement = document.querySelector('.row');
 
 
 // Create array of objects (Milestone 0)
-const teamDatas = [
+const teamMembers = [
     { name: 'Wayne Barnett', role: 'Founder & CEO', pic: 'wayne-barnett-founder-ceo.jpg' },
     { name: 'Angela Caroll', role: 'Chief Editor', pic: 'angela-caroll-chief-editor.jpg' },
     { name: 'Walter Gordon', role: 'Office Manager', pic: 'walter-gordon-office-manager.jpg' },
@@ -14,26 +14,33 @@ const teamDatas = [
 ];
 
 // Print the datas in console (Milestone 1)
-// for (let team of teamDatas) {
+// for (let team of teamMembers) {
 //     console.log(team.name)
 //     for (let key in team) {
 //         console.log(`${key}: ${team[key]} `);
 //     }
 // }
 
-let teamRow = '';
 
-for (let team of teamDatas) {
-    teamRow += `
+// Fuction for create a member card
+createMemberCard = member => {
+
+    return `
     <div class="card">
         <div class="card-img">
-            <img src="img/${team.pic}" alt="">
+            <img src="img/${member.pic}" alt="${member.name}">
         </div>
         <div class="card-text">
-            <p class="name">${team.name}</p>
-            <p class="role">${team.role}</p>
+            <p class="name">${member.name}</p>
+            <p class="role">${member.role}</p>
         </div>
     </div> `;
+}
+
+let teamRow = '';
+
+for (let member of teamMembers) {
+    teamRow += createMemberCard(member);
 }
 
 rowElement.innerHTML = teamRow;
