@@ -23,7 +23,7 @@ const teamMembers = [
 
 
 // Fuction for create a member card
-createMemberCard = member => {
+const createMemberCard = member => {
     const { pic, role, name } = member; //DESTRUCTURING
     return `
     <div class="card">
