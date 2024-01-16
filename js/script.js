@@ -24,23 +24,31 @@ const teamMembers = [
 
 // Fuction for create a member card
 createMemberCard = member => {
-
+    const { pic, role, name } = member; //DESTRUCTURING
     return `
     <div class="card">
         <div class="card-img">
-            <img src="img/${member.pic}" alt="${member.name}">
+            <img src="img/${pic}" alt="${name}">
         </div>
         <div class="card-text">
-            <p class="name">${member.name}</p>
-            <p class="role">${member.role}</p>
+            <p class="name">${name}</p>
+            <p class="role">${role}</p>
         </div>
     </div> `;
 }
 
-let teamRow = '';
 
-for (let member of teamMembers) {
-    teamRow += createMemberCard(member);
-}
+// Fuction for render team
+const renderTeam = () => {
 
-rowElement.innerHTML = teamRow;
+    let teamRow = '';
+
+    for (let member of teamMembers) {
+        teamRow += createMemberCard(member);
+    }
+
+    rowElement.innerHTML = teamRow;
+};
+
+// Effettuvo svolgimento
+renderTeam();
